@@ -1,22 +1,23 @@
-import { useState } from 'react'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0);
-  return(
-    <div>
-      <CustomButton count={count} setCount={setCount}></CustomButton>
-    </div>
-  );
-};
+import {useContext,useState} from "react"
+import {countContext} from "./context"
 
-function CustomButton(props){
-  function onClickHandler(){
-    props.setCount(props.count + 1); 
-  }
-
-    // createElement .document,appendChild
-    return<button onClick={onClickHandler}>Counter{props.count}</button>
+function App(){
+  const [count,setCount]=useState(0);
+ return(
+  <div>
+    <countContext.provider value={count}>
+       <count setCount={setCount}/>
+       </countContext.provider>
+  </div> 
+ )
 }
 
-export default App;
+function Count({setCount}){
+  return(
+    <div>
+      <CountRenderer/>
+      <Buttons setCount={setCount}/>
+    </div>
+  )
+}
