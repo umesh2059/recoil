@@ -11,7 +11,6 @@ function App(){
   </div> 
  )
 }
-
 function Count(){
   return(
     <div>
@@ -20,7 +19,6 @@ function Count(){
     </div>
   )
 }
-
 function CountRenderer(){
   const count=useRecoilValue(countAtom)
   return (
@@ -31,9 +29,9 @@ function CountRenderer(){
     </div>
   )
 }
-
 function Buttons(){
   const [count,setCount]=useRecoilState(countAtom);
+  console.log("buttons re-rendererd")
 
   return <div>
     <button onclick={()=>{
@@ -43,3 +41,4 @@ function Buttons(){
       setCount(count - 1)}}>decrease</button>
   </div>
 }
+export default App;
