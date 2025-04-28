@@ -38,7 +38,7 @@ function Buttons(){
       setCount(count + 1)}}>increase</button>
 
     <button onclick={()=>{
-      setCount(count - 1)}}>decrease</button>
+      setCount(count - 1)}}>decreases</button>
   </div>
 }
 export default App;
